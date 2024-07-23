@@ -12,7 +12,7 @@ module.exports = {
         underscored: true,
         underscoredAll: true,
         'createdAt': 'created_at',
-        'updated': 'updated_at'
+        'updatedAt': 'updated_at'
     },
     dialectOptions: {
         timezone: 'America/New_York',
