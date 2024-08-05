@@ -27,7 +27,6 @@ const deleta = {
     })
 }
 
-
 export default {
     store,
     show,

@@ -26,9 +26,6 @@ class TweetService {
 
     async index(){
         const tweets = await Tweet.findAll({
-            // order: [
-            //     ['id', 'ASC']
-            // ],
             include: [{
                 model: User,
                 attributes: ['nome_usuario'],
