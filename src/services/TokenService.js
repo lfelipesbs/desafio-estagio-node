@@ -9,7 +9,7 @@ class TokenService{
         if(!auth || !senha){
             throw new Error('Credenciais invalidas');
         }
-        
+
         const user = await User.findOne({
             where: {
                 [Op.or]: [
@@ -21,7 +21,7 @@ class TokenService{
         });
 
         if(!user){
-            throw new Error('Ususario nao existe')
+            throw new Error('Usuário nao existe')
         }
 
         if(!(await user.senhaIsValid(senha))){

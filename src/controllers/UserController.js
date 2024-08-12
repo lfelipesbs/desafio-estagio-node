@@ -6,9 +6,10 @@ class UserController {
             const resp = await userService.store({ data: req.data })
 
             return res.json(resp);
+        // eslint-disable-next-line no-unused-vars
         }catch(e){
-            return res.status(400).json({
-                errors: e.errors ? e.errors.map(err => err.message) : [e.message]
+            return res.json({
+                errors: 'Credenciais invalidas'
             });
         }
     }

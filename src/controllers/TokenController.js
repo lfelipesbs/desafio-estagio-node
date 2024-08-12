@@ -1,3 +1,4 @@
+import httpStatus from 'http-status';
 import TokenService from '../services/TokenService'
 
 require('dotenv').config();
@@ -11,10 +12,16 @@ class TokenController{
                     senha: req.data.senha
                 }
             })
-            return res.json(resp);
-        // eslint-disable-next-line no-unused-vars
+
+            return res.json({
+                token: resp
+            });
         } catch (e) {
-            return res.json(null);
+            return res.status(httpStatus.BAD_REQUEST).json({
+                status: 'error',
+                type: 'VALIDATION_ERROR',
+                message: e.message || 'error'
+            });
         }
     }
 }
